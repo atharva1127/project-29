@@ -5,13 +5,15 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
 var ground;
+var block;
 
 function setup() {
   createCanvas(1200,700);
 
   engine = Engine.create();
   world = engine.world;
-  ground=new Ground(600,800,100,100);
+  ground=new Ground(600,400,300,10);
+  block=new Blocks(550,400,50,40)
   Engine.run(engine);
 }
 
@@ -20,6 +22,7 @@ function draw() {
   Engine.update(engine);
   
   ground.display();
+  block.display();
 
   drawSprites();
 }     
